@@ -90,6 +90,12 @@ public class Janela extends javax.swing.JFrame {
         jLabelV = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTextPane15 = new javax.swing.JTextPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Regra de Hebb");
@@ -215,6 +221,35 @@ public class Janela extends javax.swing.JFrame {
         jLabelV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/redesneurais/Ok.jpg"))); // NOI18N
 
         jScrollPane15.setViewportView(jTextPane15);
+
+        jMenu1.setText("Modos");
+
+        jMenuItem3.setText("Regra de Hebb");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem1.setText("Reconhecimento de Carácters X e O");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jMenuItem1MousePressed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Sobre");
+
+        jMenuItem2.setText("Projeto");
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jMenuItem2MousePressed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -381,7 +416,8 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel4)
                 .addGap(6, 6, 6)
-                .addComponent(jLabel5))
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -500,6 +536,18 @@ public class Janela extends javax.swing.JFrame {
 
          int x1, x2, t, w1 = 0, w2 = 0, b = 0;         try {             x1 = Integer.valueOf((String) jComboBox1.getSelectedItem());             x2 = Integer.valueOf((String) jComboBox2.getSelectedItem());             t = Integer.valueOf((String) jComboBox3.getSelectedItem());             w1 += x1 * t;             w2 += x2 * t;             b += t;              x1 = Integer.valueOf((String) jComboBox4.getSelectedItem());             x2 = Integer.valueOf((String) jComboBox5.getSelectedItem());             t = Integer.valueOf((String) jComboBox6.getSelectedItem());             w1 += x1 * t;             w2 += x2 * t;             b += t;              x1 = Integer.valueOf((String) jComboBox7.getSelectedItem());             x2 = Integer.valueOf((String) jComboBox8.getSelectedItem());             t = Integer.valueOf((String) jComboBox9.getSelectedItem());             w1 += x1 * t;             w2 += x2 * t;             b += t;              x1 = Integer.valueOf((String) jComboBox10.getSelectedItem());             x2 = Integer.valueOf((String) jComboBox11.getSelectedItem());             t = Integer.valueOf((String) jComboBox12.getSelectedItem());             w1 += x1 * t;             w2 += x2 * t;             b += t;               jTextPane1.setText(String.valueOf(w1));             jTextPane2.setText(String.valueOf(w2));             jTextPane3.setText(String.valueOf(b));          } catch (Exception e) {         }     }//GEN-LAST:event_jButtonTreinarActionPerformed
 
+    private void jMenuItem1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MousePressed
+        // TODO add your handling code here:
+        RedesNeurais.getHebb().setVisible(false);
+        RedesNeurais.getXO().setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem1MousePressed
+
+    private void jMenuItem2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MousePressed
+        // TODO add your handling code here:
+        javax.swing.JOptionPane.showMessageDialog(null, "Projeto de Inteligência Artificial\n Prof. Keiji Yamanaka\n Parte 1- Regra de Hebb (13/12/12)\n Parte 2 - Reconhecimento de Carácters X e O(18/12/12)\n\n Autores:\nCaio Eduardo Cunha Machado Caetano - 98090\n Polieny de Faria Albernaz - 98109\n");
+    }//GEN-LAST:event_jMenuItem2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -565,6 +613,12 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelV;
     private javax.swing.JLabel jLabelX;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
